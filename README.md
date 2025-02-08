@@ -52,10 +52,10 @@ YOLOv9 mAP@0.5 : 0.9781
 For detailed performance metrics and visualizations, refer to the **Comparisons.md**.
 
 ## 📸 Sample Visualizations
-| YOLOv8                       | (YOLOv9                        |
+| Model A (YOLOv8)                        | Model B (YOLOv9)                        |
 | --------------------------------------- | --------------------------------------- |
-| ![YOLOv8 Result](![image](https://github.com/user-attachments/assets/c0f3632d-679c-4c29-8e2f-b381858ec3ce)
-) | ![YOLOv9 Result](![image](https://github.com/user-attachments/assets/6a548a00-457e-46b1-a0a9-d8802cbc5660)
+| ![YOLOv8 Result](![image](https://github.com/user-attachments/assets/520e0df9-ede3-4927-b49c-fde76326547c)
+) | ![YOLOv9 Result](![image](https://github.com/user-attachments/assets/5ffced6a-d683-439e-bd69-43b486f8998c)
 ) |
 
 ## 📚 Contributing
