@@ -1,16 +1,17 @@
 import torch
-import builtins
+from torch.serialization import add_safe_globals
+from ultralytics.nn.tasks import DetectionModel  # Import DetectionModel from Ultralytics
 
-# Override torch.load to bypass weights_only restriction
-original_torch_load = torch.load
-
-def patched_torch_load(*args, **kwargs):
-    kwargs['weights_only'] = False  # Ensure full model loading
-    return original_torch_load(*args, **kwargs)
-
-torch.load = patched_torch_load
+# Allowlist DetectionModel for unpickling
+add_safe_globals({'ultralytics.nn.tasks.DetectionModel': DetectionModel})
 
 # Load YOLOv9 model
-model = torch.hub.load('WongKinYiu/yolov9', 'custom', path='D:/YOLO-Comparison/models/yolov9-s.pt', source='github', force_reload=True)
+model = torch.hub.load(
+    'WongKinYiu/yolov9',
+    'custom',
+    path='D:/YOLO-Comparison/yolo11n.pt',
+    source='github',
+    force_reload=True
+)
 
 print("YOLOv9 Model Loaded Successfully!")
