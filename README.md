@@ -53,6 +53,8 @@ For detailed performance metrics and visualizations, refer to the **Comparisons.
 
 ## 📸 Sample Visualizations
 YOLOv8 Predictions	YOLOv9 Predictions
+![Screenshot 2025-02-08 143543](https://github.com/user-attachments/assets/20402a2b-7c3e-484f-8c49-2026eb74033a)
+![Screenshot 2025-02-08 145554](https://github.com/user-attachments/assets/d2165e00-34b8-4f6a-aa2d-4bac85bae8af)
 
 ## 📚 Contributing
 We welcome contributions to improve the project! Feel free to fork the repository, submit issues, or open pull requests.
