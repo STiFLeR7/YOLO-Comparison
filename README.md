@@ -49,7 +49,8 @@ YOLOv8 mAP@0.5 : 0.9726
 
 YOLOv9 mAP@0.5 : 0.9781
 
-For detailed performance metrics and visualizations, refer to the **Comparisons.md**.
+For detailed performance metrics and visualizations, refer to [Comparisons.md](Comparisons.md).
+
 
 ## 📸 Sample Visualizations
 | Model A (YOLOv8)                        | Model B (YOLOv9)                        |
