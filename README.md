@@ -54,8 +54,7 @@ For detailed performance metrics and visualizations, refer to the **Comparisons.
 ## 📸 Sample Visualizations
 | Model A (YOLOv8)                        | Model B (YOLOv9)                        |
 | --------------------------------------- | --------------------------------------- |
-| (![image](https://github.com/user-attachments/assets/520e0df9-ede3-4927-b49c-fde76326547c)
-| (![image](https://github.com/user-attachments/assets/5ffced6a-d683-439e-bd69-43b486f8998c)|
+| (![image](https://github.com/user-attachments/assets/520e0df9-ede3-4927-b49c-fde76326547c) | (![image](https://github.com/user-attachments/assets/5ffced6a-d683-439e-bd69-43b486f8998c)|
 
 
 ## 📚 Contributing
