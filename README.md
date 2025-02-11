@@ -49,10 +49,15 @@ YOLOv8 mAP@0.5 : 0.9726
 
 YOLOv9 mAP@0.5 : 0.9781
 
-For detailed performance metrics and visualizations, refer to the **Comparisons.md**.
+For detailed performance metrics and visualizations, refer to [Comparisons.md](https://github.com/STiFLeR7/YOLO-Comparison/blob/master/comparisons.md).
+
 
 ## 📸 Sample Visualizations
-YOLOv8 Predictions	YOLOv9 Predictions
+| Model A (YOLOv8)                        | Model B (YOLOv9)                        |
+| --------------------------------------- | --------------------------------------- |
+| ![image](https://github.com/user-attachments/assets/22ea88e1-4652-4bcb-97c4-8c23fec9047e) | ![image](https://github.com/user-attachments/assets/3d3205be-ac6c-4220-8965-fb224291e874) |
+
+
 
 ## 📚 Contributing
 We welcome contributions to improve the project! Feel free to fork the repository, submit issues, or open pull requests.
