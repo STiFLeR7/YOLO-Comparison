@@ -1,26 +1,55 @@
-from ultralytics import YOLO
+import cv2
 import time
-import os
+from ultralytics import YOLO
 
-def measure_fps(model_path, image_folder):
-    model = YOLO(model_path)
-    image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(('.jpg', '.png'))]
-    total_images = len(image_files)
-    
-    start_time = time.time()
-    for img in image_files:
-        model(img)
-    end_time = time.time()
+# Load YOLOv8 model
+model = YOLO('yolov8n.pt')
 
-    total_time = end_time - start_time
-    fps = total_images / total_time
+# Load the sample video
+video_path = 'dataset/Vehicle_Detection_Image_Dataset/sample_video.mp4'
+cap = cv2.VideoCapture(video_path)
 
-    print(f"Processed {total_images} images in {total_time:.2f} seconds.")
-    print(f"FPS: {fps:.2f}")
+# Check if the video opened successfully
+if not cap.isOpened():
+    print("Error: Could not open video.")
+    exit()
 
-    return fps
+# Video properties
+frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+fps_output = cap.get(cv2.CAP_PROP_FPS)
 
-if __name__ == "__main__":
-    model_path = 'results/v8/train/weights/best.pt'
-    image_folder = 'D:/YOLO-Comparison/dataset/Vehicle_Detection_Image_Dataset/train/images'  # Use the same dataset folder for both models
-    measure_fps(model_path, image_folder)
+# Define VideoWriter to save the output
+out = cv2.VideoWriter('results/v8_output.mp4', cv2.VideoWriter_fourcc(*'mp4v'), fps_output, (frame_width, frame_height))
+
+# Initialize variables for FPS calculation
+frame_count = 0
+start_time = time.time()
+
+# Process the video frame by frame
+while cap.isOpened():
+    ret, frame = cap.read()
+    if not ret:
+        break  # End of video
+
+    # Run YOLOv8 inference on the frame
+    results = model(frame)
+    annotated_frame = results[0].plot()
+
+    # Write the frame to the output video
+    out.write(annotated_frame)
+
+    # Increment frame count
+    frame_count += 1
+
+# Calculate FPS
+end_time = time.time()
+total_time = end_time - start_time
+fps = frame_count / total_time
+
+# Output FPS result as an integer
+print(f"YOLOv8 Inference FPS: {int(fps)}")
+
+# Release resources
+cap.release()
+out.release()
