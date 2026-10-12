@@ -1,3 +1,0 @@
-torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118  # For CUDA-enabled PyTorch
-ultralytics  # For YOLOv8
-prettytable
